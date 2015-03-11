@@ -9,11 +9,24 @@
 /* Begin PBXBuildFile section */
 		11577EE71AB0A62500F846A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11577EE61AB0A62500F846A5 /* main.m */; };
 		11577EEA1AB0A62500F846A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11577EE91AB0A62500F846A5 /* AppDelegate.m */; };
-		11577EED1AB0A62500F846A5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11577EEC1AB0A62500F846A5 /* ViewController.m */; };
-		11577EF01AB0A62500F846A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11577EEE1AB0A62500F846A5 /* Main.storyboard */; };
 		11577EF21AB0A62500F846A5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11577EF11AB0A62500F846A5 /* Images.xcassets */; };
 		11577EF51AB0A62500F846A5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11577EF31AB0A62500F846A5 /* LaunchScreen.xib */; };
 		11577F011AB0A62500F846A5 /* AppSettingsDraftTutorialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 11577F001AB0A62500F846A5 /* AppSettingsDraftTutorialTests.m */; };
+		11577F0D1AB0A89700F846A5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11577F0B1AB0A89700F846A5 /* MainViewController.m */; };
+		11577F0E1AB0A89700F846A5 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11577F0C1AB0A89700F846A5 /* MainViewController.xib */; };
+		11577F211AB0AA4600F846A5 /* DatePickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11577F101AB0AA4600F846A5 /* DatePickerTableViewCell.m */; };
+		11577F221AB0AA4600F846A5 /* DatePickerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11577F111AB0AA4600F846A5 /* DatePickerTableViewCell.xib */; };
+		11577F231AB0AA4600F846A5 /* EraseResultsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11577F131AB0AA4600F846A5 /* EraseResultsTableViewCell.m */; };
+		11577F241AB0AA4600F846A5 /* EraseResultsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11577F141AB0AA4600F846A5 /* EraseResultsTableViewCell.xib */; };
+		11577F261AB0AA4600F846A5 /* OGLDevices.m in Sources */ = {isa = PBXBuildFile; fileRef = 11577F181AB0AA4600F846A5 /* OGLDevices.m */; };
+		11577F271AB0AA4600F846A5 /* RemindersTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11577F1A1AB0AA4600F846A5 /* RemindersTableViewCell.m */; };
+		11577F281AB0AA4600F846A5 /* RemindersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11577F1B1AB0AA4600F846A5 /* RemindersTableViewCell.xib */; };
+		11577F291AB0AA4600F846A5 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11577F1D1AB0AA4600F846A5 /* SettingsViewController.m */; };
+		11577F2A1AB0AA4600F846A5 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11577F1E1AB0AA4600F846A5 /* SettingsViewController.xib */; };
+		11577F311AB0AB0200F846A5 /* OGLSettingsConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 11577F301AB0AB0200F846A5 /* OGLSettingsConstants.m */; };
+		11577F351AB0AB5F00F846A5 /* DateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11577F331AB0AB5F00F846A5 /* DateTableViewCell.m */; };
+		11577F361AB0AB5F00F846A5 /* DateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11577F341AB0AB5F00F846A5 /* DateTableViewCell.xib */; };
+		11577F3E1AB0CA4D00F846A5 /* UIColor+OGLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 11577F3D1AB0CA4D00F846A5 /* UIColor+OGLExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +45,35 @@
 		11577EE61AB0A62500F846A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		11577EE81AB0A62500F846A5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		11577EE91AB0A62500F846A5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		11577EEB1AB0A62500F846A5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		11577EEC1AB0A62500F846A5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		11577EEF1AB0A62500F846A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		11577EF11AB0A62500F846A5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		11577EF41AB0A62500F846A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		11577EFA1AB0A62500F846A5 /* AppSettingsDraftTutorialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppSettingsDraftTutorialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		11577EFF1AB0A62500F846A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11577F001AB0A62500F846A5 /* AppSettingsDraftTutorialTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppSettingsDraftTutorialTests.m; sourceTree = "<group>"; };
+		11577F0A1AB0A89700F846A5 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		11577F0B1AB0A89700F846A5 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		11577F0C1AB0A89700F846A5 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		11577F0F1AB0AA4600F846A5 /* DatePickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerTableViewCell.h; sourceTree = "<group>"; };
+		11577F101AB0AA4600F846A5 /* DatePickerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerTableViewCell.m; sourceTree = "<group>"; };
+		11577F111AB0AA4600F846A5 /* DatePickerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerTableViewCell.xib; sourceTree = "<group>"; };
+		11577F121AB0AA4600F846A5 /* EraseResultsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EraseResultsTableViewCell.h; sourceTree = "<group>"; };
+		11577F131AB0AA4600F846A5 /* EraseResultsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EraseResultsTableViewCell.m; sourceTree = "<group>"; };
+		11577F141AB0AA4600F846A5 /* EraseResultsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EraseResultsTableViewCell.xib; sourceTree = "<group>"; };
+		11577F171AB0AA4600F846A5 /* OGLDevices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGLDevices.h; sourceTree = "<group>"; };
+		11577F181AB0AA4600F846A5 /* OGLDevices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OGLDevices.m; sourceTree = "<group>"; };
+		11577F191AB0AA4600F846A5 /* RemindersTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindersTableViewCell.h; sourceTree = "<group>"; };
+		11577F1A1AB0AA4600F846A5 /* RemindersTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindersTableViewCell.m; sourceTree = "<group>"; };
+		11577F1B1AB0AA4600F846A5 /* RemindersTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RemindersTableViewCell.xib; sourceTree = "<group>"; };
+		11577F1C1AB0AA4600F846A5 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		11577F1D1AB0AA4600F846A5 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		11577F1E1AB0AA4600F846A5 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		11577F2F1AB0AB0200F846A5 /* OGLSettingsConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGLSettingsConstants.h; sourceTree = "<group>"; };
+		11577F301AB0AB0200F846A5 /* OGLSettingsConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OGLSettingsConstants.m; sourceTree = "<group>"; };
+		11577F321AB0AB5F00F846A5 /* DateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateTableViewCell.h; sourceTree = "<group>"; };
+		11577F331AB0AB5F00F846A5 /* DateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateTableViewCell.m; sourceTree = "<group>"; };
+		11577F341AB0AB5F00F846A5 /* DateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateTableViewCell.xib; sourceTree = "<group>"; };
+		11577F3C1AB0CA4D00F846A5 /* UIColor+OGLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+OGLExtensions.h"; sourceTree = "<group>"; };
+		11577F3D1AB0CA4D00F846A5 /* UIColor+OGLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+OGLExtensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +115,11 @@
 		11577EE31AB0A62500F846A5 /* AppSettingsDraftTutorial */ = {
 			isa = PBXGroup;
 			children = (
+				11577F3B1AB0C98800F846A5 /* controllers */,
+				11577F3A1AB0C8FB00F846A5 /* utils */,
+				11577F391AB0C89E00F846A5 /* views */,
 				11577EE81AB0A62500F846A5 /* AppDelegate.h */,
 				11577EE91AB0A62500F846A5 /* AppDelegate.m */,
-				11577EEB1AB0A62500F846A5 /* ViewController.h */,
-				11577EEC1AB0A62500F846A5 /* ViewController.m */,
-				11577EEE1AB0A62500F846A5 /* Main.storyboard */,
 				11577EF11AB0A62500F846A5 /* Images.xcassets */,
 				11577EF31AB0A62500F846A5 /* LaunchScreen.xib */,
 				11577EE41AB0A62500F846A5 /* Supporting Files */,
@@ -117,6 +151,51 @@
 				11577EFF1AB0A62500F846A5 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		11577F391AB0C89E00F846A5 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				11577F0C1AB0A89700F846A5 /* MainViewController.xib */,
+				11577F1E1AB0AA4600F846A5 /* SettingsViewController.xib */,
+				11577F0F1AB0AA4600F846A5 /* DatePickerTableViewCell.h */,
+				11577F101AB0AA4600F846A5 /* DatePickerTableViewCell.m */,
+				11577F111AB0AA4600F846A5 /* DatePickerTableViewCell.xib */,
+				11577F321AB0AB5F00F846A5 /* DateTableViewCell.h */,
+				11577F331AB0AB5F00F846A5 /* DateTableViewCell.m */,
+				11577F341AB0AB5F00F846A5 /* DateTableViewCell.xib */,
+				11577F121AB0AA4600F846A5 /* EraseResultsTableViewCell.h */,
+				11577F131AB0AA4600F846A5 /* EraseResultsTableViewCell.m */,
+				11577F141AB0AA4600F846A5 /* EraseResultsTableViewCell.xib */,
+				11577F191AB0AA4600F846A5 /* RemindersTableViewCell.h */,
+				11577F1A1AB0AA4600F846A5 /* RemindersTableViewCell.m */,
+				11577F1B1AB0AA4600F846A5 /* RemindersTableViewCell.xib */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		11577F3A1AB0C8FB00F846A5 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				11577F3C1AB0CA4D00F846A5 /* UIColor+OGLExtensions.h */,
+				11577F3D1AB0CA4D00F846A5 /* UIColor+OGLExtensions.m */,
+				11577F171AB0AA4600F846A5 /* OGLDevices.h */,
+				11577F181AB0AA4600F846A5 /* OGLDevices.m */,
+				11577F2F1AB0AB0200F846A5 /* OGLSettingsConstants.h */,
+				11577F301AB0AB0200F846A5 /* OGLSettingsConstants.m */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
+		11577F3B1AB0C98800F846A5 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				11577F0A1AB0A89700F846A5 /* MainViewController.h */,
+				11577F0B1AB0A89700F846A5 /* MainViewController.m */,
+				11577F1C1AB0AA4600F846A5 /* SettingsViewController.h */,
+				11577F1D1AB0AA4600F846A5 /* SettingsViewController.m */,
+			);
+			name = controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,9 +278,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11577EF01AB0A62500F846A5 /* Main.storyboard in Resources */,
 				11577EF51AB0A62500F846A5 /* LaunchScreen.xib in Resources */,
+				11577F281AB0AA4600F846A5 /* RemindersTableViewCell.xib in Resources */,
+				11577F0E1AB0A89700F846A5 /* MainViewController.xib in Resources */,
 				11577EF21AB0A62500F846A5 /* Images.xcassets in Resources */,
+				11577F241AB0AA4600F846A5 /* EraseResultsTableViewCell.xib in Resources */,
+				11577F2A1AB0AA4600F846A5 /* SettingsViewController.xib in Resources */,
+				11577F221AB0AA4600F846A5 /* DatePickerTableViewCell.xib in Resources */,
+				11577F361AB0AB5F00F846A5 /* DateTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,9 +303,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11577EED1AB0A62500F846A5 /* ViewController.m in Sources */,
 				11577EEA1AB0A62500F846A5 /* AppDelegate.m in Sources */,
+				11577F0D1AB0A89700F846A5 /* MainViewController.m in Sources */,
+				11577F261AB0AA4600F846A5 /* OGLDevices.m in Sources */,
+				11577F291AB0AA4600F846A5 /* SettingsViewController.m in Sources */,
+				11577F3E1AB0CA4D00F846A5 /* UIColor+OGLExtensions.m in Sources */,
 				11577EE71AB0A62500F846A5 /* main.m in Sources */,
+				11577F351AB0AB5F00F846A5 /* DateTableViewCell.m in Sources */,
+				11577F311AB0AB0200F846A5 /* OGLSettingsConstants.m in Sources */,
+				11577F231AB0AA4600F846A5 /* EraseResultsTableViewCell.m in Sources */,
+				11577F211AB0AA4600F846A5 /* DatePickerTableViewCell.m in Sources */,
+				11577F271AB0AA4600F846A5 /* RemindersTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,14 +336,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		11577EEE1AB0A62500F846A5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				11577EEF1AB0A62500F846A5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		11577EF31AB0A62500F846A5 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

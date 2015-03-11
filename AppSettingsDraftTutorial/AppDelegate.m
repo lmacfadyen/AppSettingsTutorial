@@ -7,8 +7,14 @@
 //
 
 #import "AppDelegate.h"
+#import "MainViewController.h"
+#import "UIColor+OGLExtensions.h"
 
 @interface AppDelegate ()
+
+@property (strong, nonatomic) MainViewController *viewController;
+@property (strong, nonatomic) IBOutlet UINavigationController *navController;
+
 
 @end
 
@@ -17,7 +23,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.viewController = [[MainViewController alloc] init];
+    self.navController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+    self.navController.navigationItem.title = @"Main Screen";
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor defaultLightGray];
+    self.window.rootViewController = self.navController;
+    [self.window makeKeyAndVisible];
     return YES;
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

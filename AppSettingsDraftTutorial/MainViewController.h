@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MainViewController.h
 //  AppSettingsDraftTutorial
 //
 //  Created by Lawrence F MacFadyen on 2015-03-11.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface MainViewController : UIViewController
 
 @end
-
