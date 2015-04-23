@@ -1,18 +1,11 @@
-//
-//  SettingsViewController.h based on MoreTableViewController.h
-/*
- Modified by Larry MacFadyen Sept 2014 to customize behavior, and to permit
- multiple sections.
+/*  SettingsViewController.h
+ Created by Lawrence MacFadyen using custom Nib for each UITableViewCell.
+ Inline UIDatePicker design based on both sources as listed below.
  */
 
+//  Based on MyTableViewController by Ajay Gautam on 3/9/14.
 //
-//  MoreTableViewController.h
-//  DateCell
-//
-//  Created by Ajay Gautam on 3/9/14.
-//
-// Based on Apple's DateCell source
-//
+// BASED on Apple's DateCell source code
 //
 
 /*

@@ -2,8 +2,7 @@
   Created by Lawrence MacFadyen using custom Nib for each UITableViewCell.
   Inline UIDatePicker design based on both sources as listed below.
 */
- 
- 
+
 //  Based on MyTableViewController by Ajay Gautam on 3/9/14.
 //
 // BASED on Apple's DateCell source code
@@ -68,7 +67,7 @@
 #define kPickerAnimationDuration                                                                   \
     0.40 // duration for the animation to slide the date picker into view
 
-
+// Needed for the DatePickerTableViewCell xib since it is used twice
 #define kDateTitleTag 105
 #define kDateDetailTag 106
 
@@ -80,8 +79,8 @@
 #define kDateEndRow 2
 
 static NSString *kDateCellID = @"dateCellCustom";
-static NSString *kDatePickerID = @"datePicker"; // the cell containing the date picker
-static NSString *kReminderCell = @"reminderCell"; // enable reminder cell
+static NSString *kDatePickerID = @"datePicker";           // the cell containing the date picker
+static NSString *kReminderCell = @"reminderCell";         // enable reminder cell
 static NSString *kEraseResultsCell = @"markPreviousCell"; // mark previous day cell
 
 @interface SettingsViewController ()
@@ -155,7 +154,6 @@ static NSString *kEraseResultsCell = @"markPreviousCell"; // mark previous day c
     // obtain the picker view cell's height, works because the cell was pre-defined
     UITableViewCell *pickerViewCellToCheck = [self createCellWithIdentifier:kDatePickerID];
     self.pickerCellRowHeight = pickerViewCellToCheck.frame.size.height;
-    
 }
 
 - (void)viewDidLoad
@@ -259,16 +257,16 @@ static NSString *kEraseResultsCell = @"markPreviousCell"; // mark previous day c
 #pragma mark - Conrol for Inline UIDatePicker
 
 /*! Adds or removes a UIDatePicker cell below the given indexPath.
- 
+
  @param indexPath The indexPath to reveal the UIDatePicker.
  */
 - (void)toggleDatePickerForSelectedIndexPath:(NSIndexPath *)indexPath
 {
-    
+
     [self.tableView beginUpdates];
-    
+
     NSArray *indexPaths = @[ [NSIndexPath indexPathForRow:indexPath.row + 1 inSection:0] ];
-    
+
     // check if 'indexPath' has an attached date picker below it
     if ([self hasPickerForIndexPath:indexPath])
     {
@@ -282,59 +280,59 @@ static NSString *kEraseResultsCell = @"markPreviousCell"; // mark previous day c
         [self.tableView insertRowsAtIndexPaths:indexPaths
                               withRowAnimation:UITableViewRowAnimationFade];
     }
-    
+
     [self.tableView endUpdates];
     [self.tableView layoutIfNeeded];
 }
 
 /*! Reveals the date picker inline for the given indexPath, called by "didSelectRowAtIndexPath".
- 
+
  @param indexPath The indexPath to reveal the UIDatePicker.
  */
 - (void)displayInlineDatePickerForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+
     // display the date picker inline with the table content
     [self.tableView beginUpdates];
-    
+
     BOOL before = NO; // indicates if the date picker is below "indexPath", help us determine which
     // row to reveal
     if ([self hasInlineDatePicker])
     {
         before = self.datePickerIndexPath.row < indexPath.row;
     }
-    
+
     BOOL sameCellClicked = (self.datePickerIndexPath.row - 1 == indexPath.row);
-    
+
     // remove any date picker cell if it exists
     if ([self hasInlineDatePicker])
     {
         [self.tableView deleteRowsAtIndexPaths:@[
-                                                 [NSIndexPath indexPathForRow:self.datePickerIndexPath.row inSection:0]
-                                                 ] withRowAnimation:UITableViewRowAnimationFade];
+            [NSIndexPath indexPathForRow:self.datePickerIndexPath.row inSection:0]
+        ] withRowAnimation:UITableViewRowAnimationFade];
         self.datePickerIndexPath = nil;
     }
-    
+
     if (!sameCellClicked)
     {
         // hide the old date picker and display the new one
         NSInteger rowToReveal = (before ? indexPath.row - 1 : indexPath.row);
         NSIndexPath *indexPathToReveal = [NSIndexPath indexPathForRow:rowToReveal inSection:0];
-        
+
         [self toggleDatePickerForSelectedIndexPath:indexPathToReveal];
         self.datePickerIndexPath =
-        [NSIndexPath indexPathForRow:indexPathToReveal.row + 1 inSection:0];
+            [NSIndexPath indexPathForRow:indexPathToReveal.row + 1 inSection:0];
     }
-    
+
     // always deselect the row containing the start or end date
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+
     // Here is where exception occcurs when scroll and then select while picker open
     [self.tableView endUpdates];
-    
+
     // Force reload to reset content size after inline date picker removed
     [self.tableView reloadData];
-    
+
     // inform our date picker of the current date to match the current cell
     [self updateDatePicker];
 }
@@ -344,7 +342,7 @@ static NSString *kEraseResultsCell = @"markPreviousCell"; // mark previous day c
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CGFloat height =
-    ([self indexPathHasPicker:indexPath] ? self.pickerCellRowHeight : self.tableView.rowHeight);
+        ([self indexPathHasPicker:indexPath] ? self.pickerCellRowHeight : self.tableView.rowHeight);
     return height;
 }
 
@@ -369,15 +367,15 @@ static NSString *kEraseResultsCell = @"markPreviousCell"; // mark previous day c
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *sectionHeaderView = [[UIView alloc]
-                                 initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, (IS_IPAD ? 55 : 40))];
-    
+        initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, (IS_IPAD ? 55 : 40))];
+
     sectionHeaderView.backgroundColor = [UIColor defaultLightGray];
     //
-    
+
     UILabel *headerLabel = [[UILabel alloc]
-                            initWithFrame:CGRectMake(16, (IS_IPAD ? 25 : 15), sectionHeaderView.frame.size.width,
-                                                     (IS_IPAD ? 30 : 25))];
-    
+        initWithFrame:CGRectMake(16, (IS_IPAD ? 25 : 15), sectionHeaderView.frame.size.width,
+                                 (IS_IPAD ? 30 : 25))];
+
     headerLabel.backgroundColor = [UIColor clearColor];
     headerLabel.textAlignment = NSTextAlignmentLeft;
     if (IS_IPAD)
@@ -388,7 +386,7 @@ static NSString *kEraseResultsCell = @"markPreviousCell"; // mark previous day c
     {
         [headerLabel setFont:[UIFont boldSystemFontOfSize:14]];
     }
-    
+
     [headerLabel setTextColor:[UIColor grayColor]];
     [sectionHeaderView addSubview:headerLabel];
     switch (section)
@@ -404,20 +402,20 @@ static NSString *kEraseResultsCell = @"markPreviousCell"; // mark previous day c
         default:
             break;
     }
-    
+
     return sectionHeaderView;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
-    
+
     UIView *footerView =
-    [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 70)];
-    
+        [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 70)];
+
     footerView.backgroundColor = [UIColor defaultLightGray];
-    
+
     UILabel *footerLabel =
-    [[UILabel alloc] initWithFrame:CGRectMake(16, 5, self.view.frame.size.width * .8, 65)];
+        [[UILabel alloc] initWithFrame:CGRectMake(16, 5, self.view.frame.size.width * .8, 65)];
     footerLabel.textColor = [UIColor grayColor];
     footerLabel.backgroundColor = [UIColor clearColor];
     if (IS_IPAD)
@@ -428,14 +426,14 @@ static NSString *kEraseResultsCell = @"markPreviousCell"; // mark previous day c
     {
         [footerLabel setFont:[UIFont boldSystemFontOfSize:14]];
     }
-    
+
     dispatch_async(dispatch_get_main_queue(), ^{
-        footerLabel.numberOfLines = 0;
-        [footerLabel sizeToFit];
-        
+      footerLabel.numberOfLines = 0;
+      [footerLabel sizeToFit];
+
     });
     [footerView addSubview:footerLabel];
-    
+
     switch (section)
     {
         case 0:
@@ -484,9 +482,9 @@ static NSString *kEraseResultsCell = @"markPreviousCell"; // mark previous day c
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = nil;
-    
+
     NSString *cellID = kEraseResultsCell;
-    
+
     if (indexPath.section == 0)
     {
         if ([self indexPathHasPicker:indexPath])
@@ -499,49 +497,49 @@ static NSString *kEraseResultsCell = @"markPreviousCell"; // mark previous day c
             // the indexPath is one that contains the date information
             cellID = kDateCellID; // the start/end date cells
         }
-        
+
         if (indexPath.row == 0)
         {
             // we decide here that first cell in the table is not selectable (it's just an
             // indicator)
             cellID = kReminderCell;
         }
-        
+
         cell = [tableView dequeueReusableCellWithIdentifier:cellID];
-        
+
         if (!cell)
         {
             cell = [self createCellWithIdentifier:cellID];
         }
-        
+
         // if we have a date picker open whose cell is above the cell we want to update,
         // then we have one more cell than the model allows
         //
         NSInteger modelRow = indexPath.row;
-        
+
         if (self.datePickerIndexPath != nil && self.datePickerIndexPath.row <= indexPath.row)
         {
             modelRow--;
         }
-        
+
         NSDictionary *itemData = self.dataArray[modelRow];
-        
+
         // proceed to configure our cell
         if ([cellID isEqualToString:kDateCellID])
         {
             // we have either start or end date cells, populate their date field
-            
+
             DateTableViewCell *dateCell = (DateTableViewCell *)cell;
             dateCell.titleLabel.text = [itemData valueForKey:kTitleKey];
             dateCell.detailLabel.text =
-            [self.dateFormatter stringFromDate:[itemData valueForKey:kDateKey]];
+                [self.dateFormatter stringFromDate:[itemData valueForKey:kDateKey]];
         }
         else if ([cellID isEqualToString:kReminderCell])
         {
             NSNumber *num = [itemData valueForKey:OGLSettingsConstantsSwitchKey];
-            
+
             BOOL value = [num boolValue];
-            
+
             RemindersTableViewCell *remindersCell = (RemindersTableViewCell *)cell;
             remindersCell.remindersSwitch.on = value;
         }
@@ -551,7 +549,7 @@ static NSString *kEraseResultsCell = @"markPreviousCell"; // mark previous day c
         if ([cellID isEqualToString:kEraseResultsCell])
         {
             cell = [tableView dequeueReusableCellWithIdentifier:cellID];
-            
+
             if (!cell)
             {
                 cell = [self createCellWithIdentifier:cellID];
@@ -563,7 +561,7 @@ static NSString *kEraseResultsCell = @"markPreviousCell"; // mark previous day c
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    
+
     if (section == 0)
     {
         if ([self hasInlineDatePicker])
@@ -572,15 +570,15 @@ static NSString *kEraseResultsCell = @"markPreviousCell"; // mark previous day c
             NSInteger numRows = self.dataArray.count;
             return ++numRows;
         }
-        
+
         return self.dataArray.count;
     }
-    
+
     if (section == 1)
     {
         return self.dataArray2.count;
     }
-    
+
     return 0;
 }
 
@@ -600,7 +598,7 @@ static NSString *kEraseResultsCell = @"markPreviousCell"; // mark previous day c
     if ([kDatePickerID isEqualToString:cellId])
     {
         DatePickerTableViewCell *cell =
-        [self.tableView dequeueReusableCellWithIdentifier:kDatePickerID];
+            [self.tableView dequeueReusableCellWithIdentifier:kDatePickerID];
         if (!cell)
         {
             [self.tableView registerNib:[UINib nibWithNibName:@"DatePickerTableViewCell" bundle:nil]
@@ -612,13 +610,13 @@ static NSString *kEraseResultsCell = @"markPreviousCell"; // mark previous day c
     if ([kReminderCell isEqualToString:cellId])
     {
         RemindersTableViewCell *cell =
-        [self.tableView dequeueReusableCellWithIdentifier:kReminderCell];
+            [self.tableView dequeueReusableCellWithIdentifier:kReminderCell];
         if (!cell)
         {
             [self.tableView registerNib:[UINib nibWithNibName:@"RemindersTableViewCell" bundle:nil]
                  forCellReuseIdentifier:kReminderCell];
             cell = [self.tableView dequeueReusableCellWithIdentifier:kReminderCell];
-            
+
             UISwitch *targetedSwitch = cell.remindersSwitch;
             if (targetedSwitch != nil)
             {
@@ -633,14 +631,14 @@ static NSString *kEraseResultsCell = @"markPreviousCell"; // mark previous day c
     if ([kEraseResultsCell isEqualToString:cellId])
     {
         EraseResultsTableViewCell *cell =
-        [self.tableView dequeueReusableCellWithIdentifier:kEraseResultsCell];
+            [self.tableView dequeueReusableCellWithIdentifier:kEraseResultsCell];
         if (!cell)
         {
             [self.tableView registerNib:[UINib nibWithNibName:@"EraseResultsTableViewCell"
                                                        bundle:nil]
                  forCellReuseIdentifier:kEraseResultsCell];
             cell = [self.tableView dequeueReusableCellWithIdentifier:kEraseResultsCell];
-            
+
             UIButton *eraseResultsButton = cell.eraseResultsButton;
             if (eraseResultsButton != nil)
             {
@@ -702,6 +700,22 @@ static NSString *kEraseResultsCell = @"markPreviousCell"; // mark previous day c
     [defaults synchronize];
 }
 
+- (NSDate *)entryReminderTime
+{
+    NSMutableDictionary *itemData = self.dataArray[1];
+    
+    NSDate *date = [itemData valueForKey:kDateKey];
+    return date;
+}
+
+- (NSDate *)completeReminderTime
+{
+    NSMutableDictionary *itemData = self.dataArray[2];
+    
+    NSDate *date = [itemData valueForKey:kDateKey];
+    return date;
+}
+
 - (void)reminderSwitchChanged:(id)sender
 {
     UISwitch *switcher = (UISwitch *)sender;
@@ -722,12 +736,11 @@ static NSString *kEraseResultsCell = @"markPreviousCell"; // mark previous day c
 
 - (IBAction)showEraseResults:(id)sender
 {
-    UIAlertView *alert =
-    [[UIAlertView alloc] initWithTitle:@"Some Action"
-                               message:@"Do you really want to do some action?"
-                              delegate:self
-                     cancelButtonTitle:@"No"
-                     otherButtonTitles:@"Yes", nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Some Action"
+                                                    message:@"Do you really want to do some action?"
+                                                   delegate:self
+                                          cancelButtonTitle:@"No"
+                                          otherButtonTitles:@"Yes", nil];
     [alert show];
 }
 
@@ -740,27 +753,8 @@ static NSString *kEraseResultsCell = @"markPreviousCell"; // mark previous day c
     else if (buttonIndex == 1)
     {
         // Yes selected so perform the necessary action
-        
     }
 }
-
-- (NSDate *)entryReminderTime
-{
-    NSMutableDictionary *itemData = self.dataArray[1];
-
-    NSDate *date = [itemData valueForKey:kDateKey];
-    return date;
-}
-
-- (NSDate *)completeReminderTime
-{
-    NSMutableDictionary *itemData = self.dataArray[2];
-
-    NSDate *date = [itemData valueForKey:kDateKey];
-    return date;
-}
-
-
 
 
 @end
