@@ -80,8 +80,8 @@
 
 static NSString *kDateCellID = @"dateCellCustom";
 static NSString *kDatePickerID = @"datePicker";           // the cell containing the date picker
-static NSString *kReminderCell = @"reminderCell";         // enable reminder cell
-static NSString *kEraseResultsCell = @"markPreviousCell"; // mark previous day cell
+static NSString *kSwitchCell = @"switchCell";         // enable reminder cell
+static NSString *kSomeButtonCell = @"someButtonCell"; // mark previous day cell
 
 @interface SettingsViewController ()
 
@@ -483,7 +483,7 @@ static NSString *kEraseResultsCell = @"markPreviousCell"; // mark previous day c
 {
     UITableViewCell *cell = nil;
 
-    NSString *cellID = kEraseResultsCell;
+    NSString *cellID = kSomeButtonCell;
 
     if (indexPath.section == 0)
     {
@@ -502,7 +502,7 @@ static NSString *kEraseResultsCell = @"markPreviousCell"; // mark previous day c
         {
             // we decide here that first cell in the table is not selectable (it's just an
             // indicator)
-            cellID = kReminderCell;
+            cellID = kSwitchCell;
         }
 
         cell = [tableView dequeueReusableCellWithIdentifier:cellID];
@@ -534,7 +534,7 @@ static NSString *kEraseResultsCell = @"markPreviousCell"; // mark previous day c
             dateCell.detailLabel.text =
                 [self.dateFormatter stringFromDate:[itemData valueForKey:kDateKey]];
         }
-        else if ([cellID isEqualToString:kReminderCell])
+        else if ([cellID isEqualToString:kSwitchCell])
         {
             NSNumber *num = [itemData valueForKey:OGLSettingsConstantsSwitchKey];
 
@@ -546,7 +546,7 @@ static NSString *kEraseResultsCell = @"markPreviousCell"; // mark previous day c
     }
     if (indexPath.section == 1)
     {
-        if ([cellID isEqualToString:kEraseResultsCell])
+        if ([cellID isEqualToString:kSomeButtonCell])
         {
             cell = [tableView dequeueReusableCellWithIdentifier:cellID];
 
@@ -607,15 +607,15 @@ static NSString *kEraseResultsCell = @"markPreviousCell"; // mark previous day c
         }
         return cell;
     }
-    if ([kReminderCell isEqualToString:cellId])
+    if ([kSwitchCell isEqualToString:cellId])
     {
         RemindersTableViewCell *cell =
-            [self.tableView dequeueReusableCellWithIdentifier:kReminderCell];
+            [self.tableView dequeueReusableCellWithIdentifier:kSwitchCell];
         if (!cell)
         {
             [self.tableView registerNib:[UINib nibWithNibName:@"RemindersTableViewCell" bundle:nil]
-                 forCellReuseIdentifier:kReminderCell];
-            cell = [self.tableView dequeueReusableCellWithIdentifier:kReminderCell];
+                 forCellReuseIdentifier:kSwitchCell];
+            cell = [self.tableView dequeueReusableCellWithIdentifier:kSwitchCell];
 
             UISwitch *targetedSwitch = cell.remindersSwitch;
             if (targetedSwitch != nil)
@@ -628,16 +628,16 @@ static NSString *kEraseResultsCell = @"markPreviousCell"; // mark previous day c
         }
         return cell;
     }
-    if ([kEraseResultsCell isEqualToString:cellId])
+    if ([kSomeButtonCell isEqualToString:cellId])
     {
         EraseResultsTableViewCell *cell =
-            [self.tableView dequeueReusableCellWithIdentifier:kEraseResultsCell];
+            [self.tableView dequeueReusableCellWithIdentifier:kSomeButtonCell];
         if (!cell)
         {
             [self.tableView registerNib:[UINib nibWithNibName:@"EraseResultsTableViewCell"
                                                        bundle:nil]
-                 forCellReuseIdentifier:kEraseResultsCell];
-            cell = [self.tableView dequeueReusableCellWithIdentifier:kEraseResultsCell];
+                 forCellReuseIdentifier:kSomeButtonCell];
+            cell = [self.tableView dequeueReusableCellWithIdentifier:kSomeButtonCell];
 
             UIButton *eraseResultsButton = cell.eraseResultsButton;
             if (eraseResultsButton != nil)
