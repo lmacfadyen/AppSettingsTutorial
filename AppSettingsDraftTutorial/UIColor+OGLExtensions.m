@@ -1,6 +1,5 @@
 //
 //  UIColor+Extensions.m
-//  Focus
 //
 //  Created by Lawrence F MacFadyen on 2014-10-02.
 //  Copyright (c) 2014 larrymac. All rights reserved.

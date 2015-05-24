@@ -1,6 +1,5 @@
 //
 //  DateTableViewCell.m
-//  OneGoal
 //
 //  Created by Lawrence F MacFadyen on 2015-01-31.
 //  Copyright (c) 2015 larrymac. All rights reserved.
