@@ -11,7 +11,7 @@
 @implementation OGLSettingsConstants
 
 NSString *const OGLSettingsConstantsSwitchKey = @"enableSomething";
-NSString *const OGLSettingsConstantsEntryDateKey = @"firstDate";
-NSString *const OGLSettingsConstantsCompletionDateKey = @"secondDate";
+NSString *const OGLSettingsConstantsFirstDateKey = @"firstDate";
+NSString *const OGLSettingsConstantsSecondDateKey = @"secondDate";
 
 @end

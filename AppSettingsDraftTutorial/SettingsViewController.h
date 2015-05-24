@@ -60,7 +60,7 @@
 @interface SettingsViewController
     : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
-- (NSDate *)entryReminderTime;
-- (NSDate *)completeReminderTime;
+- (NSDate *)firstDate;
+- (NSDate *)secondDate;
 
 @end

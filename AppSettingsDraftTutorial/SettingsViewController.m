@@ -60,8 +60,8 @@
 #import "OGLDevices.h"
 #import "DateTableViewCell.h"
 #import "DatePickerTableViewCell.h"
-#import "EraseResultsTableViewCell.h"
-#import "RemindersTableViewCell.h"
+#import "ButtonTableViewCell.h"
+#import "SwitchTableViewCell.h"
 #import "UIColor+OGLExtensions.h"
 
 #define kPickerAnimationDuration                                                                   \
@@ -80,7 +80,7 @@
 
 static NSString *kDateCellID = @"dateCellCustom";
 static NSString *kDatePickerID = @"datePicker";           // the cell containing the date picker
-static NSString *kSwitchCell = @"switchCell";         // enable reminder cell
+static NSString *kSwitchCell = @"switchCell";         // switch cell
 static NSString *kSomeButtonCell = @"someButtonCell"; // mark previous day cell
 
 @interface SettingsViewController ()
@@ -115,36 +115,36 @@ static NSString *kSomeButtonCell = @"someButtonCell"; // mark previous day cell
 
 - (void)setupDataSource
 {
-    NSDate *entryCurrent = (NSDate *)
-        [[NSUserDefaults standardUserDefaults] objectForKey:OGLSettingsConstantsEntryDateKey];
-    if (entryCurrent == nil)
+    NSDate *firstTimeCurrent = (NSDate *)
+        [[NSUserDefaults standardUserDefaults] objectForKey:OGLSettingsConstantsFirstDateKey];
+    if (firstTimeCurrent == nil)
     {
-        entryCurrent = [NSDate date];
+        firstTimeCurrent = [NSDate date];
     }
 
-    NSDate *completionCurrent = (NSDate *)
-        [[NSUserDefaults standardUserDefaults] objectForKey:OGLSettingsConstantsCompletionDateKey];
-    if (completionCurrent == nil)
+    NSDate *secondTimeCurrent = (NSDate *)
+        [[NSUserDefaults standardUserDefaults] objectForKey:OGLSettingsConstantsSecondDateKey];
+    if (secondTimeCurrent == nil)
     {
-        completionCurrent = [NSDate date];
+        secondTimeCurrent = [NSDate date];
     }
 
-    BOOL enableRemindersCurrent =
+    BOOL enableSwitchCurrent =
         [[NSUserDefaults standardUserDefaults] boolForKey:OGLSettingsConstantsSwitchKey];
 
     // setup our data source
     NSMutableDictionary *itemOne = [@{
-        kTitleKey : @"Enable Something",
-        OGLSettingsConstantsSwitchKey : [NSNumber numberWithBool:enableRemindersCurrent]
+        kTitleKey : @"Some Switch",
+        OGLSettingsConstantsSwitchKey : [NSNumber numberWithBool:enableSwitchCurrent]
     } mutableCopy];
 
     NSMutableDictionary *itemTwo =
         [@{ kTitleKey : @"First Date",
-            kDateKey : entryCurrent } mutableCopy];
+            kDateKey : firstTimeCurrent } mutableCopy];
     NSMutableDictionary *itemThree =
         [@{ kTitleKey : @"Second Date",
-            kDateKey : completionCurrent } mutableCopy];
-    NSMutableDictionary *itemFour = [@{ kTitleKey : @"Mark Another Day" } mutableCopy];
+            kDateKey : secondTimeCurrent } mutableCopy];
+    NSMutableDictionary *itemFour = [@{ kTitleKey : @"Some Button" } mutableCopy];
     self.dataArray = @[ itemOne, itemTwo, itemThree ];
     self.dataArray2 = @[ itemFour ];
 
@@ -208,11 +208,9 @@ static NSString *kSomeButtonCell = @"someButtonCell"; // mark previous day cell
             // we found a UIDatePicker in this cell, so update it's date value
             //
             NSDictionary *itemData = self.dataArray[self.datePickerIndexPath.row - 1];
-            //[targetedDatePicker setDate:[itemData valueForKey:kDateKey] animated:NO];
             [targetedDatePicker setDate:[itemData valueForKey:kDateKey] animated:NO];
 
             // set the call action for the date picker to dateAction
-
             [targetedDatePicker addTarget:self
                                    action:@selector(dateAction:)
                          forControlEvents:UIControlEventValueChanged];
@@ -540,8 +538,8 @@ static NSString *kSomeButtonCell = @"someButtonCell"; // mark previous day cell
 
             BOOL value = [num boolValue];
 
-            RemindersTableViewCell *remindersCell = (RemindersTableViewCell *)cell;
-            remindersCell.remindersSwitch.on = value;
+            SwitchTableViewCell *SwitchCell = (SwitchTableViewCell *)cell;
+            SwitchCell.someSwitch.on = value;
         }
     }
     if (indexPath.section == 1)
@@ -609,20 +607,20 @@ static NSString *kSomeButtonCell = @"someButtonCell"; // mark previous day cell
     }
     if ([kSwitchCell isEqualToString:cellId])
     {
-        RemindersTableViewCell *cell =
+        SwitchTableViewCell *cell =
             [self.tableView dequeueReusableCellWithIdentifier:kSwitchCell];
         if (!cell)
         {
-            [self.tableView registerNib:[UINib nibWithNibName:@"RemindersTableViewCell" bundle:nil]
+            [self.tableView registerNib:[UINib nibWithNibName:@"SwitchTableViewCell" bundle:nil]
                  forCellReuseIdentifier:kSwitchCell];
             cell = [self.tableView dequeueReusableCellWithIdentifier:kSwitchCell];
 
-            UISwitch *targetedSwitch = cell.remindersSwitch;
+            UISwitch *targetedSwitch = cell.someSwitch;
             if (targetedSwitch != nil)
             {
-                // set the call action for the switch to reminderSwitchChanged
+                // set the call action for the switch to SwitchwitchChanged
                 [targetedSwitch addTarget:self
-                                   action:@selector(reminderSwitchChanged:)
+                                   action:@selector(SwitchwitchChanged:)
                          forControlEvents:UIControlEventValueChanged];
             }
         }
@@ -630,21 +628,21 @@ static NSString *kSomeButtonCell = @"someButtonCell"; // mark previous day cell
     }
     if ([kSomeButtonCell isEqualToString:cellId])
     {
-        EraseResultsTableViewCell *cell =
+        ButtonTableViewCell *cell =
             [self.tableView dequeueReusableCellWithIdentifier:kSomeButtonCell];
         if (!cell)
         {
-            [self.tableView registerNib:[UINib nibWithNibName:@"EraseResultsTableViewCell"
+            [self.tableView registerNib:[UINib nibWithNibName:@"ButtonTableViewCell"
                                                        bundle:nil]
                  forCellReuseIdentifier:kSomeButtonCell];
             cell = [self.tableView dequeueReusableCellWithIdentifier:kSomeButtonCell];
 
-            UIButton *eraseResultsButton = cell.eraseResultsButton;
-            if (eraseResultsButton != nil)
+            UIButton *ButtonButton = cell.someButton;
+            if (ButtonButton != nil)
             {
-                // set the call action for the button to reminderSwitchChanged
-                [eraseResultsButton addTarget:self
-                                       action:@selector(showEraseResults:)
+                // set the call action for the button to SwitchwitchChanged
+                [ButtonButton addTarget:self
+                                       action:@selector(showButton:)
                              forControlEvents:UIControlEventTouchDown];
             }
         }
@@ -689,18 +687,18 @@ static NSString *kSomeButtonCell = @"someButtonCell"; // mark previous day cell
 
     // update settings
 
-    NSDate *newEntryDate = [self entryReminderTime];
-    NSDate *newCompletionDate = [self completeReminderTime];
+    NSDate *newFirstDate = [self firstDate];
+    NSDate *newSecondDate = [self secondDate];
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
-    [defaults setObject:newEntryDate forKey:OGLSettingsConstantsEntryDateKey];
-    [defaults setObject:newCompletionDate forKey:OGLSettingsConstantsCompletionDateKey];
+    [defaults setObject:newFirstDate forKey:OGLSettingsConstantsFirstDateKey];
+    [defaults setObject:newSecondDate forKey:OGLSettingsConstantsSecondDateKey];
 
     [defaults synchronize];
 }
 
-- (NSDate *)entryReminderTime
+- (NSDate *)firstDate
 {
     NSMutableDictionary *itemData = self.dataArray[1];
     
@@ -708,7 +706,7 @@ static NSString *kSomeButtonCell = @"someButtonCell"; // mark previous day cell
     return date;
 }
 
-- (NSDate *)completeReminderTime
+- (NSDate *)secondDate
 {
     NSMutableDictionary *itemData = self.dataArray[2];
     
@@ -716,17 +714,17 @@ static NSString *kSomeButtonCell = @"someButtonCell"; // mark previous day cell
     return date;
 }
 
-- (void)reminderSwitchChanged:(id)sender
+- (void)SwitchwitchChanged:(id)sender
 {
     UISwitch *switcher = (UISwitch *)sender;
     BOOL value = switcher.on;
     if (value)
     {
-        NSLog(@"Reminders are ON");
+        NSLog(@"Switch is ON");
     }
     else
     {
-        NSLog(@"Reminders are OFF");
+        NSLog(@"Switch is OFF");
     }
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -734,7 +732,7 @@ static NSString *kSomeButtonCell = @"someButtonCell"; // mark previous day cell
     [defaults synchronize];
 }
 
-- (IBAction)showEraseResults:(id)sender
+- (IBAction)showButton:(id)sender
 {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Some Action"
                                                     message:@"Do you really want to do some action?"
@@ -749,9 +747,11 @@ static NSString *kSomeButtonCell = @"someButtonCell"; // mark previous day cell
     if (buttonIndex == 0)
     {
         // No selected so do nothing
+        NSLog(@"Cancel Button Action");
     }
     else if (buttonIndex == 1)
     {
+        NSLog(@"DO Button Action");
         // Yes selected so perform the necessary action
     }
 }

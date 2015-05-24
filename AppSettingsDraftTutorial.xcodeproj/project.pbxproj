@@ -16,17 +16,17 @@
 		11577F0E1AB0A89700F846A5 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11577F0C1AB0A89700F846A5 /* MainViewController.xib */; };
 		11577F211AB0AA4600F846A5 /* DatePickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11577F101AB0AA4600F846A5 /* DatePickerTableViewCell.m */; };
 		11577F221AB0AA4600F846A5 /* DatePickerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11577F111AB0AA4600F846A5 /* DatePickerTableViewCell.xib */; };
-		11577F231AB0AA4600F846A5 /* EraseResultsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11577F131AB0AA4600F846A5 /* EraseResultsTableViewCell.m */; };
-		11577F241AB0AA4600F846A5 /* EraseResultsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11577F141AB0AA4600F846A5 /* EraseResultsTableViewCell.xib */; };
 		11577F261AB0AA4600F846A5 /* OGLDevices.m in Sources */ = {isa = PBXBuildFile; fileRef = 11577F181AB0AA4600F846A5 /* OGLDevices.m */; };
-		11577F271AB0AA4600F846A5 /* RemindersTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11577F1A1AB0AA4600F846A5 /* RemindersTableViewCell.m */; };
-		11577F281AB0AA4600F846A5 /* RemindersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11577F1B1AB0AA4600F846A5 /* RemindersTableViewCell.xib */; };
+		11577F271AB0AA4600F846A5 /* SwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11577F1A1AB0AA4600F846A5 /* SwitchTableViewCell.m */; };
+		11577F281AB0AA4600F846A5 /* SwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11577F1B1AB0AA4600F846A5 /* SwitchTableViewCell.xib */; };
 		11577F291AB0AA4600F846A5 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11577F1D1AB0AA4600F846A5 /* SettingsViewController.m */; };
 		11577F2A1AB0AA4600F846A5 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11577F1E1AB0AA4600F846A5 /* SettingsViewController.xib */; };
 		11577F311AB0AB0200F846A5 /* OGLSettingsConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 11577F301AB0AB0200F846A5 /* OGLSettingsConstants.m */; };
 		11577F351AB0AB5F00F846A5 /* DateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11577F331AB0AB5F00F846A5 /* DateTableViewCell.m */; };
 		11577F361AB0AB5F00F846A5 /* DateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11577F341AB0AB5F00F846A5 /* DateTableViewCell.xib */; };
 		11577F3E1AB0CA4D00F846A5 /* UIColor+OGLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 11577F3D1AB0CA4D00F846A5 /* UIColor+OGLExtensions.m */; };
+		117214A21B11F60300FE0919 /* ButtonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 117214A01B11F60300FE0919 /* ButtonTableViewCell.m */; };
+		117214A31B11F60300FE0919 /* ButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 117214A11B11F60300FE0919 /* ButtonTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,14 +56,11 @@
 		11577F0F1AB0AA4600F846A5 /* DatePickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerTableViewCell.h; sourceTree = "<group>"; };
 		11577F101AB0AA4600F846A5 /* DatePickerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerTableViewCell.m; sourceTree = "<group>"; };
 		11577F111AB0AA4600F846A5 /* DatePickerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerTableViewCell.xib; sourceTree = "<group>"; };
-		11577F121AB0AA4600F846A5 /* EraseResultsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EraseResultsTableViewCell.h; sourceTree = "<group>"; };
-		11577F131AB0AA4600F846A5 /* EraseResultsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EraseResultsTableViewCell.m; sourceTree = "<group>"; };
-		11577F141AB0AA4600F846A5 /* EraseResultsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EraseResultsTableViewCell.xib; sourceTree = "<group>"; };
 		11577F171AB0AA4600F846A5 /* OGLDevices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGLDevices.h; sourceTree = "<group>"; };
 		11577F181AB0AA4600F846A5 /* OGLDevices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OGLDevices.m; sourceTree = "<group>"; };
-		11577F191AB0AA4600F846A5 /* RemindersTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindersTableViewCell.h; sourceTree = "<group>"; };
-		11577F1A1AB0AA4600F846A5 /* RemindersTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindersTableViewCell.m; sourceTree = "<group>"; };
-		11577F1B1AB0AA4600F846A5 /* RemindersTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RemindersTableViewCell.xib; sourceTree = "<group>"; };
+		11577F191AB0AA4600F846A5 /* SwitchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchTableViewCell.h; sourceTree = "<group>"; };
+		11577F1A1AB0AA4600F846A5 /* SwitchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchTableViewCell.m; sourceTree = "<group>"; };
+		11577F1B1AB0AA4600F846A5 /* SwitchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchTableViewCell.xib; sourceTree = "<group>"; };
 		11577F1C1AB0AA4600F846A5 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		11577F1D1AB0AA4600F846A5 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		11577F1E1AB0AA4600F846A5 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
@@ -74,6 +71,9 @@
 		11577F341AB0AB5F00F846A5 /* DateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateTableViewCell.xib; sourceTree = "<group>"; };
 		11577F3C1AB0CA4D00F846A5 /* UIColor+OGLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+OGLExtensions.h"; sourceTree = "<group>"; };
 		11577F3D1AB0CA4D00F846A5 /* UIColor+OGLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+OGLExtensions.m"; sourceTree = "<group>"; };
+		1172149F1B11F60300FE0919 /* ButtonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonTableViewCell.h; sourceTree = "<group>"; };
+		117214A01B11F60300FE0919 /* ButtonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonTableViewCell.m; sourceTree = "<group>"; };
+		117214A11B11F60300FE0919 /* ButtonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,18 +158,18 @@
 			children = (
 				11577F0C1AB0A89700F846A5 /* MainViewController.xib */,
 				11577F1E1AB0AA4600F846A5 /* SettingsViewController.xib */,
+				1172149F1B11F60300FE0919 /* ButtonTableViewCell.h */,
+				117214A01B11F60300FE0919 /* ButtonTableViewCell.m */,
+				117214A11B11F60300FE0919 /* ButtonTableViewCell.xib */,
 				11577F0F1AB0AA4600F846A5 /* DatePickerTableViewCell.h */,
 				11577F101AB0AA4600F846A5 /* DatePickerTableViewCell.m */,
 				11577F111AB0AA4600F846A5 /* DatePickerTableViewCell.xib */,
 				11577F321AB0AB5F00F846A5 /* DateTableViewCell.h */,
 				11577F331AB0AB5F00F846A5 /* DateTableViewCell.m */,
 				11577F341AB0AB5F00F846A5 /* DateTableViewCell.xib */,
-				11577F121AB0AA4600F846A5 /* EraseResultsTableViewCell.h */,
-				11577F131AB0AA4600F846A5 /* EraseResultsTableViewCell.m */,
-				11577F141AB0AA4600F846A5 /* EraseResultsTableViewCell.xib */,
-				11577F191AB0AA4600F846A5 /* RemindersTableViewCell.h */,
-				11577F1A1AB0AA4600F846A5 /* RemindersTableViewCell.m */,
-				11577F1B1AB0AA4600F846A5 /* RemindersTableViewCell.xib */,
+				11577F191AB0AA4600F846A5 /* SwitchTableViewCell.h */,
+				11577F1A1AB0AA4600F846A5 /* SwitchTableViewCell.m */,
+				11577F1B1AB0AA4600F846A5 /* SwitchTableViewCell.xib */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -279,13 +279,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				11577EF51AB0A62500F846A5 /* LaunchScreen.xib in Resources */,
-				11577F281AB0AA4600F846A5 /* RemindersTableViewCell.xib in Resources */,
+				11577F281AB0AA4600F846A5 /* SwitchTableViewCell.xib in Resources */,
 				11577F0E1AB0A89700F846A5 /* MainViewController.xib in Resources */,
 				11577EF21AB0A62500F846A5 /* Images.xcassets in Resources */,
-				11577F241AB0AA4600F846A5 /* EraseResultsTableViewCell.xib in Resources */,
 				11577F2A1AB0AA4600F846A5 /* SettingsViewController.xib in Resources */,
 				11577F221AB0AA4600F846A5 /* DatePickerTableViewCell.xib in Resources */,
 				11577F361AB0AB5F00F846A5 /* DateTableViewCell.xib in Resources */,
+				117214A31B11F60300FE0919 /* ButtonTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,11 +309,11 @@
 				11577F291AB0AA4600F846A5 /* SettingsViewController.m in Sources */,
 				11577F3E1AB0CA4D00F846A5 /* UIColor+OGLExtensions.m in Sources */,
 				11577EE71AB0A62500F846A5 /* main.m in Sources */,
+				117214A21B11F60300FE0919 /* ButtonTableViewCell.m in Sources */,
 				11577F351AB0AB5F00F846A5 /* DateTableViewCell.m in Sources */,
 				11577F311AB0AB0200F846A5 /* OGLSettingsConstants.m in Sources */,
-				11577F231AB0AA4600F846A5 /* EraseResultsTableViewCell.m in Sources */,
 				11577F211AB0AA4600F846A5 /* DatePickerTableViewCell.m in Sources */,
-				11577F271AB0AA4600F846A5 /* RemindersTableViewCell.m in Sources */,
+				11577F271AB0AA4600F846A5 /* SwitchTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

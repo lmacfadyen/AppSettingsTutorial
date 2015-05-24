@@ -11,7 +11,7 @@
 @interface OGLSettingsConstants : NSObject
 
 extern NSString *const OGLSettingsConstantsSwitchKey;
-extern NSString *const OGLSettingsConstantsEntryDateKey;
-extern NSString *const OGLSettingsConstantsCompletionDateKey;
+extern NSString *const OGLSettingsConstantsFirstDateKey;
+extern NSString *const OGLSettingsConstantsSecondDateKey;
 
 @end
