@@ -209,7 +209,7 @@ static NSString *kSomeButtonCell = @"someButtonCell"; // mark previous day cell
             //
             NSDictionary *itemData = self.dataArray[self.datePickerIndexPath.row - 1];
             [targetedDatePicker setDate:[itemData valueForKey:kDateKey] animated:NO];
-
+            NSLog(@"Adding Date Picker Action");
             // set the call action for the date picker to dateAction
             [targetedDatePicker addTarget:self
                                    action:@selector(dateAction:)
@@ -325,7 +325,6 @@ static NSString *kSomeButtonCell = @"someButtonCell"; // mark previous day cell
     // always deselect the row containing the start or end date
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 
-    // Here is where exception occcurs when scroll and then select while picker open
     [self.tableView endUpdates];
 
     // Force reload to reset content size after inline date picker removed
@@ -620,7 +619,7 @@ static NSString *kSomeButtonCell = @"someButtonCell"; // mark previous day cell
             {
                 // set the call action for the switch to SwitchwitchChanged
                 [targetedSwitch addTarget:self
-                                   action:@selector(SwitchwitchChanged:)
+                                   action:@selector(switchChanged:)
                          forControlEvents:UIControlEventValueChanged];
             }
         }
@@ -714,7 +713,7 @@ static NSString *kSomeButtonCell = @"someButtonCell"; // mark previous day cell
     return date;
 }
 
-- (void)SwitchwitchChanged:(id)sender
+- (void)switchChanged:(id)sender
 {
     UISwitch *switcher = (UISwitch *)sender;
     BOOL value = switcher.on;
